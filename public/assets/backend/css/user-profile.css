@@ -1,0 +1,16 @@
+.like_post a{
+    color: #333333 !important;
+}
+
+.like_post a:hover{
+    color: blue !important;
+    text-decoration: none;
+}
+
+.pagination {
+    display: block;
+}
+
+.pagination > .active > span {
+    background-color: #2C3E50;
+}

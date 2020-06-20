@@ -1,0 +1,307 @@
+
+/*
+====================================================
+
+* 	[Master Stylesheet]
+
+	Theme Name :
+	Version    :
+	Author     :
+	Author URI :
+
+====================================================
+
+
+/* ---------------------------------
+1. PRIMARY STYLES
+--------------------------------- */
+
+html{ font-size: 100%; height: 100%;  overflow-x: hidden; touch-action: manipulation; }
+
+body{ font-size: 15px; font-family: 'Roboto', sans-serif; width: 100%; height: 100%; margin: 0; font-weight: 300;
+	-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; word-wrap: break-word;
+	background: #ffffff; color: #000; }
+
+h1, h2, h3, h4, h5, h6, p, a, ul, span, li, img{ margin: 0; padding: 0; font-weight: 300; }
+
+h1,h2,h3,h4,h5,h6{ line-height: 1.5; }
+
+p{ line-height: 1.6; font-family: 'Maven Pro', sans-serif; font-weight: 400; color: #444; }
+
+h1{ font-size: 4em; line-height: 1; }
+h2{ font-size: 2.8em; line-height: 1.1; }
+h3{ font-size: 1.5em; }
+h4{ font-size: 1.2em; }
+h5{ font-size: 1.1em; }
+h6{ font-size: .9em; letter-spacing: 1px; }
+
+a, button{ display: inline-block; text-decoration: none; color: inherit; transition: all .3s; }
+
+a:focus, a:active, a:hover,
+button:focus, button:active, button:hover{ text-decoration: none; color: #498BF9; }
+
+b{ font-weight: 500; }
+
+img{ width: 100%; }
+
+li{ list-style: none;}
+
+span{ display: inline-block; }
+
+header{ font-weight: 400; }
+
+.content { min-height: 83vh;}
+
+
+/* ---------------------------------
+2. COMMONS FOR PAGE DESIGN
+--------------------------------- */
+.font-red {color: red;}
+
+.h-297 {height: 297px!important;}
+/*!*.section{ padding: 28px 0 5px; }*!*/
+
+/*.mt-5 { margin-top: 50px;}*/
+
+/*.section .heading{ padding-bottom: 70px; }*/
+
+/*.center-text{ text-align: center; }*/
+
+/*.color-white{ color: #fff; }*/
+
+/*.display-table{ display: table; height: 100%; width: 100%; }*/
+
+/*.display-table-cell{ display: table-cell; vertical-align: middle; }*/
+
+/*.card{ background: transparent; border: 0; }*/
+
+/*.no-side-padding{ padding-right: 0px; padding-left: 0px; }*/
+
+/*.no-left-padding{ padding-left: 0px; }*/
+
+/*.no-right-padding{ padding-right: 0px; }*/
+
+.pt-1 {padding-top: 10px;}
+.pt-2 {padding-top: 20px;}
+
+.icon{ font-size: 2em; }
+
+.badge {
+    border-radius: 2px;
+    color: #fff !important;
+    border: none;
+}
+
+.bg-pink {
+    background-color: #E91E63 !important;
+    color: #fff;
+}
+
+.bg-blue {
+    background-color: #2196F3 !important;
+    color: #fff;
+}
+
+::-webkit-input-placeholder { font-size: .9em; letter-spacing: 1px; }
+
+::-moz-placeholder { font-size: .9em; letter-spacing: 1px; }
+
+:-ms-input-placeholder { font-size: .9em; letter-spacing: 1px;  }
+
+:-moz-placeholder { font-size: .9em; letter-spacing: 1px;  }
+
+
+/* ---------------------------------
+5. SINGLE POST
+--------------------------------- */
+.section {
+    padding: 70px 0 40px;
+}
+.blog-area .row div[class^="col"] { margin-bottom: 30px; }
+
+.blog-area{ text-align: center; background: #ffffff; }
+
+.blog-area .single-post{ height: 100%; position: relative; padding-bottom: 45px;
+	overflow: hidden; box-shadow: 0px 0px 5px rgba(0,0,0,.1); border: 1px solid #ddd; background: #fff; }
+
+.blog-area .single-post .title{ padding: 20px 30px 30px; }
+
+.single-post .avatar{ margin: 0 auto; margin-top: -40px; width: 60px; height: 60px; overflow: hidden; z-index: 10;
+	border-radius: 100px; position: relative; border: 7px solid #fff; box-shadow: 0px 0px 10px rgba(0,0,0,.2); }
+
+.single-post .post-footer{ position: absolute; bottom: 0; left: 0; right: 0; text-align: center; }
+
+.single-post .post-footer > li{ width: 33.33%; display: inline-block; border-right: 1px solid #fff; background: #f7f7f7; }
+
+.single-post .post-footer > li:first-child{ float: left; }
+
+.single-post .post-footer > li:last-child{ border: 0px; float: right; }
+
+.single-post .post-footer > li > a{ line-height: 45px; width: 100%; }
+
+.single-post .post-footer i{ display: inline-block; margin-right: 10px; opacity: .6; font-size: 1.1em; }
+
+.blog-area .post-content {
+    text-align: left;
+    padding: 0px 25px 16px;;
+}
+
+
+.notification-post{ position: relative; padding-bottom: 45px;
+    overflow: hidden; box-shadow: 0px 0px 5px rgba(0,0,0,.1); border: 1px solid #ddd; background: #fff; }
+
+
+
+/* ---------------------------------
+6. NORMAL BLOG
+--------------------------------- */
+
+.post-style-1 .blog-image{ max-height: 200px; overflow: hidden; }
+
+
+
+/* ---------------------------------
+7. EXTRA BIG BLOG
+--------------------------------- */
+
+.blog-area .post-style-2{ padding-bottom: 0; text-align: left; }
+
+.blog-area .post-style-2 .title{ padding: 4px 10px 9px; }
+
+.post-style-2 .avatar-area{  position: relative; }
+
+.post-style-2 .avatar{ margin: 0px; }
+
+.post-style-2 .avatar-area .right-area{ margin-left: 90px; position: absolute; top: 50%; transform: translateY(-50%); }
+
+.post-style-2 .blog-image{ width: 50%; float: left; height: 100%; }
+
+.post-style-2 .blog-image img{ height: 100%; width: 100%; }
+
+.post-style-2 .blog-info{ width: 50%; float: left; height: 100%; position: relative; padding: 15px 15px 0px; padding-bottom: 55px; }
+
+.post-style-2 .blog-info p{ padding-left: 10px; }
+
+
+/* ---------------------------------
+8. EXTRA MEDIUM BLOG
+--------------------------------- */
+
+.post-style-2.post-style-3 .blog-info{ width: 100%; float: none; }
+
+/* ---------------------------------
+8. LOGIN PAGE
+--------------------------------- */
+
+.panel-title {
+    text-align: center;
+    font-weight: 400;
+}
+.login-label, .form-check-label{
+    font-weight: 400 !important;
+}
+
+/* ---------------------------------
+8. AUTHOR TABLE
+--------------------------------- */
+
+.table tbody tr td {
+    vertical-align: middle !important;
+}
+
+.table thead tr th {
+    text-align: center;
+}
+
+.block-header {
+    margin-bottom: 15px;
+}
+.block-container .block-header h3 {
+    display: inline-block;
+}
+
+.post-btn {
+    padding: 1px 8px !important;
+}
+
+
+/* ---------------------------------
+8. NOTIFICATION SECTION
+--------------------------------- */
+
+ .notice-heading {
+     padding-bottom: 12px;
+     border-bottom: 1px solid #E9E9E9;
+ }
+.notice-heading img {
+    width: 50px;
+}
+
+.new-notice {
+    border-radius: 6px;
+    background-color: #f2f2f2e0;
+    margin-top: 18px;
+}
+
+.notice-title {
+    font-size: 13px;
+    padding: 11px 0px;
+    border-bottom: 1px solid #E9E9E9;
+    font-family: monospace;
+}
+
+.old-notice {
+    background-color: #f2f2f2e0;
+    border-radius: 5px;
+    margin-top: 12px;
+}
+
+.book-header {
+    border-top: 1px solid #E9E9E9;
+    padding: 10px 0px;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-top: 14px;
+    font-family: monospace;
+}
+
+.books {
+    padding: 10px;
+    height: 130px;
+    background-color: #f2f2f2e0;
+    color: #515963;
+    border-radius: 5px;
+}
+
+.books a {
+    font-family: Arial,sans-serif,serif;
+    display: block;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.book-footer {
+    color: red;
+    font-family: sans-serif;
+    padding: 10px 0px 2px;
+}
+
+.book-footer a {
+    font-weight: bold;
+}
+
+/* ---------------------------------
+8. PAGINATION
+--------------------------------- */
+.pagination {
+    margin: 0;
+    display: block;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #2C3E50;
+    border-color: #2C3E50;
+}
