@@ -17,6 +17,19 @@ class LikeController extends Controller
         $hasLiked = DB::table('likes')
             ->where(['user_id' => $userId, 'post_id' => $postId, 'like' => '1'])
             ->pluck('like');
-    }
 
+        if (0 == count($hasLiked)) {
+            DB::table('likes')
+                ->updateOrInsert(
+                    ['user_id' => $userId, 'post_id' => $postId],
+                    ['like' => '1']
+                );
+        } elseif (1 == count($hasLiked)) {
+            DB::table('likes')
+                ->updateOrInsert(
+                    ['user_id' => $userId, 'post_id' => $postId],
+                    ['like' => '0']
+                );
+        }
+    }
 }
