@@ -137,10 +137,10 @@
 @endsection
 
 @push('js')
-    <script src="{{ asset('assets/frontend/js/like.js') }}"></script>
-
     <script>
-        var token = '{{ Session::token() }}';
-        var urlLike = '{{ route('like') }}';e
+        var likeToken = '{{ csrf_token() }}';
+        var urlLike = '{{ route('like') }}';
     </script>
+
+    <script src="{{ asset('assets/frontend/js/like.js') }}"></script>
 @endpush
