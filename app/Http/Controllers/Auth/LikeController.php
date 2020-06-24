@@ -31,5 +31,8 @@ class LikeController extends Controller
                     ['like' => '0']
                 );
         }
+
+        $likes = Post::find($postId)->likes()->where(['like' => '1'])->get();
+        $totalLikes = count($likes);
     }
 }
