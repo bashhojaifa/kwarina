@@ -6,11 +6,12 @@
 /.idea
 /.vscode
 /.vagrant
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
+/Homestead.json
+/Homestead.yaml
+/npm-debug.log
+/yarn-error.log
 
 /public/uploads/*
-composer.lock
-package-lock.json
+/composer.lock
+/package-lock.json
+/.env
