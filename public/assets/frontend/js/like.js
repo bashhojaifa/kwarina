@@ -28,31 +28,32 @@ $('#modal-save').on('click', function () {
 
 // var postId = 0;
 
-$('.post-footer').find('.like').on('click', function(event) {
+$(document).on('click', '.like', function(event) {
 
     event.preventDefault();
-    var postId = $(this).data("postid");
-    var isLike = event.target.previousElementSibling == null;
+
+    var that = this;
+    var postId = $(that).data("post-id");
+    var userId = $(that).data("user-id");
+
+    if (! userId) {
+        alert('You must be logged in to like the post');
+        return;
+    }
+
     $.ajax({
         method: 'POST',
         url: urlLike,
-        data: {isLike: isLike, postId: postId, _token: token},
-        //
-        // success: function (data) {
-        //     $('.like').addClass('text-red');
-        // }
-    })
-        .done(function() {
-
-            if (isLike) {
-                $('.like').removeClass('text-red');
-            } else {
-                $('.like').addClass('text-red');
+        data: { postId, userId, "_token": likeToken },
+        dataType: 'JSON',
+        success: function (data) {
+            // $('.like').addClass('text-red');
+            if (data.status && true === data.status) {
+                $(that).find('.likes').text(data.likes);
             }
-        })
-        .fail(function () {
-            console.log( $(this).atr)
-
-        });
-
+        },
+        error: function (xhr, status, error) {
+            console.log(status, error);
+        },
+    });
 });

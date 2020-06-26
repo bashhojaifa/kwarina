@@ -31,7 +31,7 @@
 
                                     <p>{!! Str::limit($post->body, 250, '....') !!} <a class="font-red" href="{{ route('post.details', $post->slug) }}">See more</a></p>
                                     <ul class="post-footer">
-                                        <li><a class="like {{ Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 1 ? 'font-red' : '' : ''   }}"  data-postid = "{{ $post->id }}" href="javascript:void(0);" title="Like"><i class="ion-heart"></i>{{ $post->likes->count() }}</a></li>
+                                        <li><a class="like {{ Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 1 ? 'text-red' : '' : ''   }}"  data-post-id = "{{ $post->id }}" data-user-id="{{ Auth::user()->id }}" href="javascript:void(0);" title="Like"><i class="ion-heart"></i><span class="likes">{{ $post->likes()->where(['like' => '1'])->count() }}</span></a></li>
                                         <li><a href="javascript:void(0)"><i class="ion-chatbubble"></i>{{ $post->comments->count() }}</a></li>
                                         <li><a href="javascript:void(0)"><i class="ion-eye"></i>{{ $post->view_count }}</a></li>
                                     </ul>
@@ -137,10 +137,10 @@
 @endsection
 
 @push('js')
-    <script src="{{ asset('assets/frontend/js/like.js') }}"></script>
-
     <script>
-        var token = '{{ Session::token() }}';
-        var urlLike = '{{ route('like') }}';e
+        var likeToken = '{{ csrf_token() }}';
+        var urlLike = '{{ route('like') }}';
     </script>
+
+    <script src="{{ asset('assets/frontend/js/like.js') }}"></script>
 @endpush
