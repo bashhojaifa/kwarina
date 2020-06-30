@@ -40,21 +40,18 @@ class PostController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Makes slug
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  string  $string
+     * @param  string  $separator
+     * @return string
      */
 
     function make_slug($string, $separator = '-')
     {
-        $string = preg_replace('/\s+/u', '-', trim($string));
-
-        $string = trim($string);
-        $string = mb_strtolower($string, 'UTF-8');
-        $string = preg_replace("/[^a-z0-9_\-\sءاآؤئبپتثجچحخدذرزژسشصضطظعغفقكکگلمنوهی]/u", '', $string);
-        $string = preg_replace("/[\s\-_]+/", ' ', $string);
-        $string = preg_replace("/[\s_]/", $separator, $string);
+        $trimmedString = trim($string);
+        $removedAsciiSymbols = preg_replace('/[\x00-\x1F\x21-\x2F\x3A-\x40\x5B-\x60\x7B-\xBF]/u', '', $trimmedString);
+        $string = preg_replace('/\s+/u', $separator, $removedAsciiSymbols);
 
         return $string;
     }
