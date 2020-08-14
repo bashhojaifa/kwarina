@@ -47,9 +47,14 @@ $(document).on('click', '.like', function(event) {
         data: { postId, userId, "_token": likeToken },
         dataType: 'JSON',
         success: function (data) {
-            // $('.like').addClass('text-red');
             if (data.status && true === data.status) {
                 $(that).find('.likes').text(data.likes);
+            }
+
+            if (true === data.likeState) {
+                $(that).addClass('text-danger');
+            } else if (false === data.likeState) {
+                $(that).removeClass('text-danger');
             }
         },
         error: function (xhr, status, error) {

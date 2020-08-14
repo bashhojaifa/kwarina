@@ -11,6 +11,7 @@ class LikeController extends Controller
 {
     public function postLikePost(Request $request)
     {
+        $likeState = null;
         $postId = $request->input('postId');
         $userId = $request->input('userId');
 
@@ -19,12 +20,14 @@ class LikeController extends Controller
             ->pluck('like');
 
         if (0 == count($hasLiked)) {
+            $likeState = true;
             DB::table('likes')
                 ->updateOrInsert(
                     ['user_id' => $userId, 'post_id' => $postId],
                     ['like' => '1']
                 );
         } elseif (1 == count($hasLiked)) {
+            $likeState = false;
             DB::table('likes')
                 ->updateOrInsert(
                     ['user_id' => $userId, 'post_id' => $postId],
@@ -37,6 +40,7 @@ class LikeController extends Controller
 
         return response()->json([
             'status' => true,
+            'likeState' => $likeState,
             'likes' => $totalLikes,
         ]);
     }

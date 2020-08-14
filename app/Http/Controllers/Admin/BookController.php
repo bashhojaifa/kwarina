@@ -98,7 +98,8 @@ class BookController extends Controller
             'Content-Disposition' => 'inline; filename="'.$book->book_name.'"'
         ];
 
-        $path = Storage::disk('public')->url('books/' .$book->book_name);
+        $path = Storage::disk('public')->path('books/' .$book->book_name);
+
         return response()->file($path, $headers);
 
     }
